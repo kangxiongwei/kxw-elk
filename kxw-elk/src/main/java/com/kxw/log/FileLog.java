@@ -13,7 +13,7 @@ public class FileLog {
     public static void main(String[] args) throws InterruptedException {
         for (int i = 0; i< 1000; i++) {
             Thread.sleep(1000);
-            LOGGER.info("this is the {} count", i);
+            LOGGER.info("this is the {} count, now using filebeats collect the logs", i);
         }
     }
 

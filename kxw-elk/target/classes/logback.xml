@@ -22,7 +22,7 @@
         </filter>
         <file>logs/elk.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>logs/elk.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <fileNamePattern>logs/elk.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
