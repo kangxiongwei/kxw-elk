@@ -61,5 +61,27 @@ logstash -f xxxx.conf
 filebeats -e -c filebeats.yml
 ```
 
+###三、LogStash将数据存入ElasticSearch，并使用Kibana展示
+```mardown
+
+1.logstash配置
+input {
+  beats {
+    port => 5044
+  }
+}
+output {
+    stdout { codec => rubydebug }
+    elasticsearch {
+        hosts => ["127.0.0.1:9200"]
+        index => "logstash-elk-%{+YYYY.MM.dd}"
+    }
+}
+
+2.启动es，使用localhost:9200验证是否启动成功
+
+3.启动kibana，使用localhost:5601验证，然后创建index规则，查看数据
+
+```
 
 
